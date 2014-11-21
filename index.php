@@ -21,12 +21,12 @@ $form = getFormFromSpectrumEMPAPI($config['SpectrumEMPAPIKey']);
 		<meta http-equiv="Content-language" content="en" />
 		
 		<!-- resources -->
-		<link href="//resources.spectrumiqs.com/css-reset.css?<?= $cache ?>" rel="stylesheet" type="text/css" />
-		<link href="//resources.spectrumiqs.com/jquery-ui/overcast/jquery-ui.css?<?= $cache ?>" rel="stylesheet" type="text/css" />
+		<link href="plugins/css-reset/css-reset.css?<?= $cache ?>" rel="stylesheet" type="text/css" />
+		<link href="plugins/jquery/jquery-ui.css?<?= $cache ?>" rel="stylesheet" type="text/css" />
 		
 		<!-- bootstrap css -->
-		<link href="bootstrap/css/bootstrap.min.css?<?= $cache ?>" rel="stylesheet" type="text/css" />
-		<link href="bootstrap/css/bootstrap-theme.min.css?<?= $cache ?>" rel="stylesheet" type="text/css" />
+		<link href="plugins/bootstrap/css/bootstrap.min.css?<?= $cache ?>" rel="stylesheet" type="text/css" />
+		<link href="plugins/bootstrap/css/bootstrap-theme.min.css?<?= $cache ?>" rel="stylesheet" type="text/css" />
 		
 		<!-- page specific -->
 		<link href="css/index.css?<?= $cache ?>" rel="stylesheet" type="text/css" />
@@ -47,6 +47,10 @@ $form = getFormFromSpectrumEMPAPI($config['SpectrumEMPAPIKey']);
 				}
 			</style>
 		</noscript>
+		
+		<script>
+			window.SITE = {};
+		</script>
     </head>
     <body>
     	<!-- inform the user that javascript is a required element to view this page -->
@@ -82,18 +86,29 @@ $form = getFormFromSpectrumEMPAPI($config['SpectrumEMPAPIKey']);
 		<?= implode('', $form['modals']); ?>
 		
 		<!-- resources -->
-		<script type="text/javascript" src="//resources.spectrumiqs.com/jquery.js?<?= $cache ?>"></script>
-		<script type="text/javascript" src="//resources.spectrumiqs.com/jquery-ui.js?<?= $cache ?>"></script>
-		<script type="text/javascript" src="//resources.spectrumiqs.com/jquery-masked.js?<?= $cache ?>"></script>
-		<script type="text/javascript" src="//resources.spectrumiqs.com/jquery-cycle.js?<?= $cache ?>"></script>
-		<script type="text/javascript" src="//resources.spectrumiqs.com/swfobject.js?<?= $cache ?>"></script>
-		<script type="text/javascript" src="//resources.spectrumiqs.com/validate.js?<?= $cache ?>"></script>
-		<script type="text/javascript" src="//resources.spectrumiqs.com/calendar.js?<?= $cache ?>"></script>
-		<script type="text/javascript" src="//resources.spectrumiqs.com/eventcalendar.js?<?= $cache ?>"></script>
+		<script type="text/javascript" src="plugins/jquery/jquery.js?<?= $cache ?>"></script>
+		<script type="text/javascript" src="plugins/jquery/jquery-ui.js?<?= $cache ?>"></script>
+		<script type="text/javascript" src="plugins/jquery/jquery-masked.js?<?= $cache ?>"></script>
+		<script type="text/javascript" src="plugins/jquery/jquery-cycle.js?<?= $cache ?>"></script>
+		<script type="text/javascript" src="plugins/jquery/jquery-pubsub.js?<?= $cache ?>"></script>
+		<script type="text/javascript" src="plugins/swfobject/swfobject.js?<?= $cache ?>"></script>
+		<script type="text/javascript" src="plugins/iqs/validate.js?<?= $cache ?>"></script>
+		<script type="text/javascript" src="plugins/iqs/calendar.js?<?= $cache ?>"></script>
+		<script type="text/javascript" src="plugins/iqs/eventcalendar.js?<?= $cache ?>"></script>
 		
 		<!-- page specific -->
+		<script type="text/javascript" src="js/field_rules_form_library.js?<?= $cache ?>"></script>
+		<script type="text/javascript" src="js/field_rules_handler.js?<?= $cache ?>"></script>
 		<script type="text/javascript" src="js/index.js?<?= $cache ?>"></script>
 		
-		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js?<?= $cache ?>"></script>
+		<script type="text/javascript" src="plugins/bootstrap/js/bootstrap.min.js?<?= $cache ?>"></script>
+		
+		<script>
+			SITE.data = {
+				client_rules_url: '<?= CLIENT_RULES_URL ?>',
+				field_options_url: '<?= FIELD_OPTIONS_URL ?>',
+				client_id: '<?= $config['SpectrumEMPClientID'] ?>',
+			};
+		</script>
 	</body>
 </html>
