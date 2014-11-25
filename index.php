@@ -89,12 +89,8 @@ $form = getFormFromSpectrumEMPAPI($config['SpectrumEMPAPIKey']);
 		<script type="text/javascript" src="plugins/jquery/jquery.js?<?= $cache ?>"></script>
 		<script type="text/javascript" src="plugins/jquery/jquery-ui.js?<?= $cache ?>"></script>
 		<script type="text/javascript" src="plugins/jquery/jquery-masked.js?<?= $cache ?>"></script>
-		<script type="text/javascript" src="plugins/jquery/jquery-cycle.js?<?= $cache ?>"></script>
 		<script type="text/javascript" src="plugins/jquery/jquery-pubsub.js?<?= $cache ?>"></script>
-		<script type="text/javascript" src="plugins/swfobject/swfobject.js?<?= $cache ?>"></script>
 		<script type="text/javascript" src="plugins/iqs/validate.js?<?= $cache ?>"></script>
-		<script type="text/javascript" src="plugins/iqs/calendar.js?<?= $cache ?>"></script>
-		<script type="text/javascript" src="plugins/iqs/eventcalendar.js?<?= $cache ?>"></script>
 		
 		<!-- page specific -->
 		<script type="text/javascript" src="js/field_rules_form_library.js?<?= $cache ?>"></script>
