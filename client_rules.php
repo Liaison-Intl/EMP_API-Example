@@ -1,7 +1,6 @@
 <?php
 
 require_once('scripts/config.php');
-require_once('scripts/functions.php');
 
 $url = ALL_CLIENT_RULES_URL . '?CLIENT-ID=' . $config['SpectrumEMPClientID'];
 
