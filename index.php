@@ -93,17 +93,17 @@ $form = getFormFromSpectrumEMPAPI($config['SpectrumEMPAPIKey']);
 		<script type="text/javascript" src="plugins/iqs/validate.js?<?= $cache ?>"></script>
 		
 		<!-- page specific -->
-		<script type="text/javascript" src="js/field_rules_form_library.js?<?= $cache ?>"></script>
-		<script type="text/javascript" src="js/field_rules_handler.js?<?= $cache ?>"></script>
+		<script type="text/javascript" src="field_rules_js.php"></script>
 		<script type="text/javascript" src="js/index.js?<?= $cache ?>"></script>
 		
 		<script type="text/javascript" src="plugins/bootstrap/js/bootstrap.min.js?<?= $cache ?>"></script>
 		
 		<script>
 			SITE.data = {
-				client_rules_url: '<?= CLIENT_RULES_URL ?>',
+				all_client_rules_url: '<?= ALL_CLIENT_RULES_URL ?>',
 				field_options_url: '<?= FIELD_OPTIONS_URL ?>',
 				client_id: '<?= $config['SpectrumEMPClientID'] ?>',
+				emp_url: '<?= API_URL ?>',
 			};
 		</script>
 	</body>

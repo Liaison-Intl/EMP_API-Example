@@ -60,24 +60,10 @@ function main() {
 		});
 		
 		function setup_field_rules() {
-		    var form_rule_handler = SITE.field_rules_form_library;
-			
-	        form_rule_handler.setup_library();
-	        var fields_by_id = {};
-			
-			$.each($('[name]'), function(key, field) {
-			    // we need to strip out [] if they trail a field name - such as 608[]
-			    field_name = $(field).attr('name');
-			    field_name = field_name.replace('[]', '');
-			    if (!fields_by_id[field_name]) {
-			    	fields_by_id[field_name] = [];
-				}
-				fields_by_id[field_name].push(field);
-		    });
-		    
-		    form_rule_handler.register_fields(fields_by_id, $('form'));
-	    }
-		
-	    setup_field_rules();
+			var field_rules = new SITE.Field_rules_lib();
+			field_rules.init($('#form_example'));
+		}
+
+		setup_field_rules();
 	}();
 }
